@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Constant.EnvConfig;
+import constant.EnvConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,6 +27,7 @@ public class OrderFormPage {
 
     // Кнопка "Далее"
     private final By nextButton = By.xpath(".//button[contains(text(), 'Далее')]");
+
 
     public OrderFormPage(WebDriver driver) {
         this.driver = driver;
@@ -55,17 +56,21 @@ public class OrderFormPage {
         return this;
     }
 
+    // Метод для получения локатора с конкретным значением метро
+    private By getMetroLocator(String metro) {
+        String xpath = String.format("//div[contains(text(), '%s')]", metro);
+        return By.xpath(xpath);
+    }
+
     public OrderFormPage setMetroStationField(String metro) {
         driver.findElement(metroStationField).clear();
         driver.findElement(metroStationField).sendKeys(metro);
-        By metroLocator = By.xpath("//div[contains(text(), '" + metro + "')]");
+        By metroLocator = getMetroLocator(metro);
         new WebDriverWait(driver, Duration.ofSeconds(EnvConfig.DEFAULT_TIMEOUT))
                 .until(ExpectedConditions.visibilityOfElementLocated(metroLocator));
         driver.findElement(metroLocator).click();
         return this;
     }
-
-
     // Метод заполнения поля "Телефон"
     public OrderFormPage setPhoneNumberField(String phone) {
         driver.findElement(phoneNumberField).clear();

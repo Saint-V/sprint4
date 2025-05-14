@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Constant.EnvConfig;
+import constant.EnvConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

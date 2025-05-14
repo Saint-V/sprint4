@@ -1,4 +1,4 @@
-package Constant;
+package constant;
 
 public class DataForOrder {
     public static final String NAME = "Александр";

@@ -1,5 +1,5 @@
-import Pages.FaqPage;
-import Pages.MainPage;
+import pages.FaqPage;
+import pages.MainPage;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,10 +1,10 @@
-import Pages.*;
+import pages.*;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 
-import static Constant.DataForOrder.*;
+import static constant.DataForOrder.*;
 
 
 
